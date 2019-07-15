@@ -8,7 +8,7 @@ export default function(state = initialState, action) {
    case ADDTODO: {
     const {todo} = action.payload
     const newTodos = state.todos.concat([todo])
-    console.log(action.payload)
+    
     
     return {
      

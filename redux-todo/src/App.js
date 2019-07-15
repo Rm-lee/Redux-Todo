@@ -7,7 +7,7 @@ class App extends Component {
  constructor() {
   super();
   this.state = {
-  todos:[],
+  
   newTodo: ''
   }
 }
@@ -23,10 +23,13 @@ class App extends Component {
    
  }
  render() {
-  
+  console.log(this.state.todos)
   return (
    <div>
-     <Todos />
+     {this.props.todos.map( todo => (
+       <Todos todo={todo} />
+       
+     ))}
     <form onSubmit={this.submitHandler}>
 					<input type="text" name="todo" placeholder="todo" value={this.state.todo} onChange={this.handleChange} required />
 					

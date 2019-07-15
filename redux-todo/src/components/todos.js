@@ -1,30 +1,20 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
+
 
 class Todos extends Component {
- constructor() {
-		super()
-		this.state = {
-			todos: []
-		}
-	}
+
  render() {
   return (
-   <div>
-    <p>{this.props.todo}</p>
+   <div style={todosStyle}>
+    <p>{this.props.todo } dd</p>
    </div>
   );
  }
 }
-const mapStateToProps = (state) => {
- return {
-  todos: state.todos
- }
+const todosStyle = {
+ border:'1px solid black',
+ margin:'10px',
+ textAlign: 'center',
+ 
 }
-const mapDispatchToProps = {
- //
-}
-export default connect(
-	mapStateToProps,
-	mapDispatchToProps,
-)(Todos)
+export default Todos
