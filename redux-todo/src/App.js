@@ -30,7 +30,7 @@ class App extends Component {
   return (
    <div>
      {this.props.todos.map( todo => (
-       <Todos todo={todo.todo} key={todo.id}/>
+       <Todos todo={todo} key={todo.id}/>
        
      ))}
     <form onSubmit={this.submitHandler}>

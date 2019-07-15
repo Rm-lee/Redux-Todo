@@ -11,11 +11,11 @@ export const addToDo = (todo, completed, id) => {
   }
  }
 }
-export const completed = (completed) => {
+export const completed = (id) => {
  return {
   type:COMPLETED,
   payload: {
-   completed
+   id
   }
  }
 }

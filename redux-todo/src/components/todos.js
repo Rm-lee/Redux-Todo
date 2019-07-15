@@ -5,15 +5,16 @@ import {completed} from '../actions/actions'
 class Todos extends Component {
 
  
-completedToggle = () =>{
-
-   this.props.completed(this.props.id)
+completedToggle = (e,id) =>{
+   this.props.completed(id)
 
 }
  render() {
+ 
   return (
-   <div style={todosStyle} >
-    <p>{this.props.todo } </p>
+   
+   <div style={todosStyle} onClick={e => this.completedToggle(e,this.props.todo.id)}>
+    <p>{this.props.todo.todo } </p>
    </div>
   );
  }

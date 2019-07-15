@@ -8,12 +8,11 @@ const initialState = {
 }
 export default function(state = initialState, action) {
   switch(action.type) {
+
    case ADDTODO: {
     const {todo, completed, id} = action.payload
     const newTodo = {todo,completed,id}
     const newTodos = state.todos.concat([newTodo])
-    
-    
     return {
      
       todos:newTodos
@@ -21,10 +20,16 @@ export default function(state = initialState, action) {
    }
 
    case COMPLETED: {
-    const {completed, id} = action.payload
-    if (state.todos.find(todo => todo.id === id).completed === false)
+    const { id } = action.payload
+    const newobj = state.todos.map(todo => {
+     if (todo.id === id){
+      todo.completed = !todo.completed;
+      return todo;
+      }
+      else {return todo}
+    })
     return {
-
+     todos:newobj
     }
    }
    default:
