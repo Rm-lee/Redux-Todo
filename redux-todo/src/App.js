@@ -28,7 +28,7 @@ class App extends Component {
  render() {
  
   return (
-   <div>
+   <div className="App">
      {this.props.todos.map( todo => (
        <Todos todo={todo} key={todo.id}/>
        

@@ -1,4 +1,32 @@
 .App {
   text-align: center;
+  margin:0 auto;
+  width:50%;
 }
 
+.line-through{
+  text-decoration: line-through;
+  border:1px solid rgb(14, 199, 255);
+  margin:10px 0;
+  padding:0;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 4px 4px 4px#cdcdcd;
+  color:red;
+
+}
+
+.none{
+  
+  text-decoration: none;
+  border:1px solid rgb(14, 199, 255);
+  margin:10px 0;
+  padding:0;
+  text-align: center;
+  box-shadow: 4px 4px 4px#cdcdcd;
+  border-radius: 15px;
+}
+p {
+  
+  margin:0;
+}
