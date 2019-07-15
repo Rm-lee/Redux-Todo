@@ -1,4 +1,5 @@
 export const ADDTODO = 'ADDTODO';
+export const COMPLETED = 'COMPLETED'
 
 export const addToDo = (todo, completed, id) => {
  return {
@@ -7,6 +8,14 @@ export const addToDo = (todo, completed, id) => {
    todo,
    completed,
    id
+  }
+ }
+}
+export const completed = (completed) => {
+ return {
+  type:COMPLETED,
+  payload: {
+   completed
   }
  }
 }
