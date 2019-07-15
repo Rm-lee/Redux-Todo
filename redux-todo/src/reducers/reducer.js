@@ -1,4 +1,5 @@
 import {ADDTODO} from '../actions/actions'
+import {COMPLETED} from '../actions/actions'
 
 const initialState = {
  todos:[],
@@ -16,6 +17,14 @@ export default function(state = initialState, action) {
     return {
      
       todos:newTodos
+    }
+   }
+
+   case COMPLETED: {
+    const {completed, id} = action.payload
+    if (state.todos.find(todo => todo.id === id).completed === false)
+    return {
+
     }
    }
    default:
