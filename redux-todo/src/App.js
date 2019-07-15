@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Todos from './components/todos'
+import uuid from 'uuid'
 import { connect } from 'react-redux'
 import { addToDo } from './actions/actions'
 
@@ -7,8 +8,9 @@ class App extends Component {
  constructor() {
   super();
   this.state = {
-  
-  newTodo: ''
+    value: '',
+    completed: false,
+    
   }
 }
  handleChange = (e) => {
@@ -19,15 +21,16 @@ class App extends Component {
  }
  submitHandler= (e) => {
    e.preventDefault()
-   this.props.addToDo(this.state.newTodo)
+   this.props.addToDo(this.state.newTodo, this.state.completed, uuid.v4())
+   
    
  }
  render() {
-  console.log(this.state.todos)
+ 
   return (
    <div>
      {this.props.todos.map( todo => (
-       <Todos todo={todo} />
+       <Todos todo={todo.todo} key={todo.id}/>
        
      ))}
     <form onSubmit={this.submitHandler}>

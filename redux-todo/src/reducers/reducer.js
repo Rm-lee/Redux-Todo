@@ -1,13 +1,16 @@
 import {ADDTODO} from '../actions/actions'
 
 const initialState = {
- todos:[]
+ todos:[],
+ 
+ 
 }
 export default function(state = initialState, action) {
   switch(action.type) {
    case ADDTODO: {
-    const {todo} = action.payload
-    const newTodos = state.todos.concat([todo])
+    const {todo, completed, id} = action.payload
+    const newTodo = {todo,completed,id}
+    const newTodos = state.todos.concat([newTodo])
     
     
     return {
