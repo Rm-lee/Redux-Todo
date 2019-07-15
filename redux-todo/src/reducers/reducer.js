@@ -20,10 +20,10 @@ export default function(state = initialState, action) {
    }
 
    case COMPLETED: {
-    const { id } = action.payload
+    const { id, completed } = action.payload
     const newobj = state.todos.map(todo => {
      if (todo.id === id){
-      todo.completed = !todo.completed;
+      todo.completed = completed
       return todo;
       }
       else {return todo}

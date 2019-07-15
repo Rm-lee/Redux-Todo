@@ -14,31 +14,26 @@ constructor(props) {
 }
 }
 
-completedToggle = (e,id) =>{
-   this.props.completed(id)
+completedToggle = (e,id,completedVal) =>{
+   completedVal = !completedVal
+   this.props.completed(id,completedVal)
    const line = (this.state.classCompleted === "none") ? "line-through" : "none";
    this.setState({"classCompleted":line});
-   console.log(this.state.classCompleted)
+  
 
 }
  render() {
 
   return (
    
-   <div className={this.state.classCompleted}  onClick={e => this.completedToggle(e,this.props.todo.id)}>
+   <div className={this.state.classCompleted}  onClick={e => this.completedToggle(e,this.props.todo.id,this.props.todo.completed)}>
     <p>{this.props.todo.todo } </p>
    </div>
   );
  }
 }
 
-const todosStyle = {
- border:'1px solid black',
- margin:'10px',
- textAlign: 'center',
- 
 
-}
 const mapDispatchToProps = {
 	completed:completed,
 }
